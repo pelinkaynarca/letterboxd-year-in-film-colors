@@ -20,9 +20,6 @@ async function fetchColorPalette() {
     return;
   }
 
-  // show the spinner and hide the form before starting the fetch
-  showSpinner();
-
   try {
     const response = await fetch(`https://yearinfilmcolors.onrender.com/scrape?username=${username}&year=${year}`);
 
