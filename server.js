@@ -1,14 +1,15 @@
-const express = require('express');
-const puppeteer = require('puppeteer');
-const cors = require('cors');
-const Vibrant = require('node-vibrant');
+const express = require("express");
+const puppeteer = require("puppeteer");
+const cors = require("cors");
+const Vibrant = require("node-vibrant");
+require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors());
 
-const path = require('path');
+const path = require("path");
 
 app.use(express.static('public'));
 
@@ -65,7 +66,17 @@ async function scrapePages(baseUrl) {
   try {
     const browser = await puppeteer.launch({
       headless: 'new',
-      defaultViewport: null
+      defaultViewport: null,
+      args: [
+        "--disable-setuid-sandbox",
+        "--no-sandbox",
+        "--single-process",
+        "--no-zygote",
+      ],
+      executablePath:
+        process.env.NODE_ENV === "production"
+          ? process.env.PUPPETEER_EXECUTABLE_PATH
+          : puppeteer.executablePath(),
     });
 
     while (true) {
