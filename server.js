@@ -115,7 +115,7 @@ async function scrapePages(baseUrl) {
       // process each entry on the page
       for (const entry of entries) {
         try {
-          const filmPosterElement = await entry.$('.react-component.poster.film-poster.film-poster-37088.linked-film-poster.not-in-watchlist > div > img.image');
+          const filmPosterElement = await entry.$('.react-component.poster.film-poster.film-poster-37088.linked-film-poster.not-in-watchlist div img.image');
           const viewingDateElement = await entry.$('.td-day.diary-day a');
 
           // ensure both elements are present before proceeding
