@@ -70,7 +70,7 @@ async function scrapePages(baseUrl) {
       args: [
         "--disable-setuid-sandbox",
         "--no-sandbox",
-        "--no-zygote",
+        "--no-zygote"
       ],
       executablePath:
         process.env.NODE_ENV === "production"
@@ -87,7 +87,7 @@ async function scrapePages(baseUrl) {
      await page.setUserAgent(customUA);
 
       console.log('Before navigating to page:', pageUrl);
-      await page.goto(pageUrl, { waitUntil: 'domcontentloaded' });
+      await page.goto(pageUrl, { waitUntil: 'networkidle2', timeout: 0 });
       console.log('After navigating to page. Waiting for entries...');
 
       console.log('Navigated to page:', pageUrl);
