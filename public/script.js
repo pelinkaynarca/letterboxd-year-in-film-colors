@@ -1,28 +1,3 @@
-function showSpinner() {
-  const table = document.getElementById('table');
-  const spinner = document.createElement('div');
-  spinner.className = 'inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]';
-  const span = document.createElement('span');
-  span.className = '!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]';
-  span.innerText = 'Loading...';
-  table.appendChild(spinner);
-  table.appendChild(span);
-
-  const formContainer = document.getElementById('homepageFormContainer');
-  formContainer.classList.add('hidden', 'transition-opacity', 'duration-500', 'ease-in-out');
-}
-
-// Function to hide the spinner and show the form
-function hideSpinner() {
-  const spinner = document.querySelector('.spinner');
-  if (spinner) {
-    spinner.remove();
-  }
-
-  const formContainer = document.getElementById('homepageFormContainer');
-  formContainer.classList.remove('opacity-0');
-}
-
 async function fetchColorPalette() {
   const username = document.getElementById('username').value;
   const yearInput = document.getElementById('year').value;
