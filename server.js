@@ -154,6 +154,9 @@ async function scrapePages(baseUrl) {
       currentPage++;
     }
 
+    // close the browser instance after all pages have been scraped
+    await browser.close();
+
     // return the collected film data
     return scrapedData;
   } catch (error) {
