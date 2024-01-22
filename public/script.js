@@ -33,9 +33,6 @@ async function fetchColorPalette() {
     renderYearlyCalendar(colorPaletteData, year);
   } catch (error) {
     console.error('Error during fetch:', error.message);
-  } finally {
-    // Hide the spinner and show the form after the fetch is done
-    hideSpinner();
   }
 }
 

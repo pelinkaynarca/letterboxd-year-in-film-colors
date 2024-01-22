@@ -70,7 +70,6 @@ async function scrapePages(baseUrl) {
       args: [
         "--disable-setuid-sandbox",
         "--no-sandbox",
-        "--single-process",
         "--no-zygote",
       ],
       executablePath:
