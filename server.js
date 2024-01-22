@@ -93,7 +93,7 @@ async function scrapePages(baseUrl) {
       console.log('Navigated to page:', pageUrl);
 
       // wait for a specific element that indicates the page has loaded
-      await page.waitForSelector('tbody').catch(e => console.error('Error waiting for selector:', e.message));
+      await page.waitForSelector('#diary-table').catch(e => console.error('Error waiting for selector:', e.message));
 
       // extract entries
       const entries = await page.$$('tr.diary-entry-row');
