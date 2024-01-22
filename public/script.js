@@ -49,7 +49,7 @@ async function fetchColorPalette() {
   showSpinner();
 
   try {
-    const response = await fetch(`http://localhost:3000/scrape?username=${username}&year=${year}`);
+    const response = await fetch(`https://yearinfilmcolors.onrender.com/scrape?username=${username}&year=${year}`);
 
     if (!response.ok) {
       console.error(`Failed to fetch. HTTP error! Status: ${response.status}`);
