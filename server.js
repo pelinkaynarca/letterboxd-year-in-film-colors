@@ -87,13 +87,13 @@ async function scrapePages(baseUrl) {
      await page.setUserAgent(customUA);
 
       console.log('Before navigating to page:', pageUrl);
-      await page.goto(pageUrl, { waitUntil: 'networkidle2', timeout: 0 });
+      await page.goto(pageUrl, { waitUntil: 'domcontentloaded' });
       console.log('After navigating to page. Waiting for entries...');
 
       console.log('Navigated to page:', pageUrl);
 
       // wait for a specific element that indicates the page has loaded
-      await page.waitForSelector('tr.diary-entry-row');
+      await page.waitForSelector('tbody').catch(e => console.error('Error waiting for selector:', e.message));
 
       // extract entries
       const entries = await page.$$('tr.diary-entry-row');

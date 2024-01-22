@@ -582,10 +582,6 @@ video {
   position: fixed;
 }
 
-.\!absolute {
-  position: absolute !important;
-}
-
 .bottom-0 {
   bottom: 0px;
 }
@@ -596,10 +592,6 @@ video {
 
 .top-0 {
   top: 0px;
-}
-
-.\!-m-px {
-  margin: -1px !important;
 }
 
 .mb-6 {
@@ -614,10 +606,6 @@ video {
   margin-bottom: 2.25rem;
 }
 
-.inline-block {
-  display: inline-block;
-}
-
 .flex {
   display: flex;
 }
@@ -630,10 +618,6 @@ video {
   display: none;
 }
 
-.\!h-px {
-  height: 1px !important;
-}
-
 .h-10 {
   height: 2.5rem;
 }
@@ -644,10 +628,6 @@ video {
 
 .h-6 {
   height: 1.5rem;
-}
-
-.h-8 {
-  height: 2rem;
 }
 
 .h-9 {
@@ -664,10 +644,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.\!w-px {
-  width: 1px !important;
 }
 
 .w-11 {
@@ -690,26 +666,12 @@ video {
   width: 15rem;
 }
 
-.w-8 {
-  width: 2rem;
-}
-
 .w-full {
   width: 100%;
 }
 
 .w-screen {
   width: 100vw;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
 }
 
 .cursor-pointer {
@@ -722,10 +684,6 @@ video {
 
 .flex-col {
   flex-direction: column;
-}
-
-.flex-nowrap {
-  flex-wrap: nowrap;
 }
 
 .items-center {
@@ -756,28 +714,12 @@ video {
   gap: 1rem;
 }
 
-.gap-8 {
-  gap: 2rem;
-}
-
-.gap-7 {
-  gap: 1.75rem;
-}
-
 .gap-6 {
   gap: 1.5rem;
 }
 
 .self-end {
   align-self: flex-end;
-}
-
-.\!overflow-hidden {
-  overflow: hidden !important;
-}
-
-.\!whitespace-nowrap {
-  white-space: nowrap !important;
 }
 
 .rounded-3xl {
@@ -788,32 +730,12 @@ video {
   border-radius: 4px;
 }
 
-.rounded-full {
-  border-radius: 9999px;
-}
-
-.rounded-md {
-  border-radius: 0.375rem;
-}
-
-.\!border-0 {
-  border-width: 0px !important;
-}
-
 .border-2 {
   border-width: 2px;
 }
 
-.border-4 {
-  border-width: 4px;
-}
-
 .border-b-\[1px\] {
   border-bottom-width: 1px;
-}
-
-.border-solid {
-  border-style: solid;
 }
 
 .border-LB-Gray {
@@ -822,14 +744,6 @@ video {
 
 .border-LB-Orange {
   border-color: var(--LBOrange);
-}
-
-.border-current {
-  border-color: currentColor;
-}
-
-.border-r-transparent {
-  border-right-color: transparent;
 }
 
 .bg-button-color {
@@ -848,24 +762,16 @@ video {
   background-size: cover;
 }
 
-.\!p-0 {
-  padding: 0px !important;
-}
-
 .p-0 {
   padding: 0px;
 }
 
-.p-5 {
-  padding: 1.25rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
-}
-
 .p-1 {
   padding: 0.25rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-2 {
@@ -889,10 +795,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.align-\[-0\.125em\] {
-  vertical-align: -0.125em;
 }
 
 .font-default-font {
@@ -977,10 +879,6 @@ video {
   text-decoration-line: none;
 }
 
-.opacity-0 {
-  opacity: 0;
-}
-
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -991,26 +889,8 @@ video {
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
-.transition-opacity {
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.duration-500 {
-  transition-duration: 500ms;
-}
-
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .bg-radial-LB-Orange-LB-Green-LB-Blue {
   background-image: radial-gradient(closest-side, var(--LBOrange) 10%, var(--LBGreen) 50%, var(--LBBlue) 90%);
-}
-
-.\!\[clip\:rect\(0\2c 0\2c 0\2c 0\)\] {
-  clip: rect(0,0,0,0) !important;
 }
 
 :root {
@@ -1359,10 +1239,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.hover\:text-headerBgLight:hover {
-  color: var(--headerBgLight);
-}
-
 .hover\:shadow-md:hover {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -1372,24 +1248,6 @@ video {
 .hover\:shadow-LB-Gray:hover {
   --tw-shadow-color: var(--LBGray);
   --tw-shadow: var(--tw-shadow-colored);
-}
-
-.hover\:transition-shadow:hover {
-  transition-property: box-shadow;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .motion-reduce\:animate-\[spin_1\.5s_linear_infinite\] {
-    animation: spin 1.5s linear infinite;
-  }
 }
 
 @media (min-width: 768px) {
