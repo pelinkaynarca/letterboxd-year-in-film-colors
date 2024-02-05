@@ -31,6 +31,7 @@ module.exports = {
           'light-gray': 'var(--LightGray)',
           'LB-Gray': 'var(--LBGray)',
           'LB-Orange': 'var(--LBOrange)',
+          'LB-Green': 'var(--LBGreen)',
           'button-color': 'var(--buttonColor)',
           'LB-Blue': 'var(--LBBlue)',
           'header-BG': 'var(--headerBG)',
@@ -41,6 +42,7 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-gradients'),
+    require('tailwind-scrollbar')
   ],
 }
 

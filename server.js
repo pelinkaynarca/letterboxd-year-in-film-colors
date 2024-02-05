@@ -199,6 +199,23 @@ async function generateColorPalette(scrapedData) {
   return colorPaletteData;
 }
 
+/*
+app.get('/screenshot', async (req, res) => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto('http://localhost:3000/public'); // replace with your server address
+
+  const element = await page.$('#table'); // replace '#divId' with your div's selector
+  const screenshot = await element.screenshot();
+
+  await browser.close();
+
+  res.setHeader('Content-Disposition', 'attachment;filename="screenshot.png"');
+  res.setHeader('Content-Type', 'image/png');
+  res.send(screenshot);
+});
+*/
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
