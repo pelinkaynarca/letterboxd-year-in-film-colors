@@ -607,8 +607,8 @@ video {
   margin-bottom: 2rem;
 }
 
-.block {
-  display: block;
+.mt-14 {
+  margin-top: 3.5rem;
 }
 
 .flex {
@@ -623,12 +623,8 @@ video {
   display: none;
 }
 
-.h-0 {
-  height: 0px;
-}
-
-.h-0\.5 {
-  height: 0.125rem;
+.h-1\/6 {
+  height: 16.666667%;
 }
 
 .h-10 {
@@ -643,16 +639,8 @@ video {
   height: 75%;
 }
 
-.h-32 {
-  height: 8rem;
-}
-
 .h-9 {
   height: 2.25rem;
-}
-
-.h-\[12\%\] {
-  height: 12%;
 }
 
 .h-\[12px\] {
@@ -667,47 +655,20 @@ video {
   height: 100vh;
 }
 
-.h-5 {
-  height: 1.25rem;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
-.h-24 {
-  height: 6rem;
-}
-
-.h-80 {
-  height: 20rem;
-}
-
 .max-h-\[12px\] {
   max-height: 12px;
-}
-
-.max-h-max {
-  max-height: -moz-max-content;
-  max-height: max-content;
 }
 
 .min-h-\[12px\] {
   min-height: 12px;
 }
 
-.min-h-min {
-  min-height: -moz-min-content;
-  min-height: min-content;
-}
-
-.min-h-max {
-  min-height: -moz-max-content;
-  min-height: max-content;
-}
-
 .w-11\/12 {
   width: 91.666667%;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .w-2 {
@@ -722,16 +683,8 @@ video {
   width: 1rem;
 }
 
-.w-6 {
-  width: 1.5rem;
-}
-
 .w-60 {
   width: 15rem;
-}
-
-.w-7 {
-  width: 1.75rem;
 }
 
 .w-\[12px\] {
@@ -748,6 +701,11 @@ video {
 
 .min-w-\[12px\] {
   min-width: 12px;
+}
+
+.min-w-max {
+  min-width: -moz-max-content;
+  min-width: max-content;
 }
 
 .max-w-\[12px\] {
@@ -774,10 +732,6 @@ video {
   align-items: center;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
 }
@@ -786,22 +740,16 @@ video {
   gap: 0.25rem;
 }
 
+.gap-14 {
+  gap: 3.5rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
 
-.gap-3 {
-  gap: 0.75rem;
-}
-
 .gap-4 {
   gap: 1rem;
-}
-
-.space-y-1 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
 .self-end {
@@ -830,10 +778,6 @@ video {
 
 .border-LB-Gray {
   border-color: var(--LBGray);
-}
-
-.bg-LB-Gray {
-  background-color: var(--LBGray);
 }
 
 .bg-button-color {
@@ -1111,13 +1055,13 @@ video {
 
 #loader:before {
   /* Label properties */
-  content: "Analyzing your data...";
-  color: #fafad2;
-  text-shadow: 0.2vmin 0.2vmin 0 #000;
-  font-family: fantasy;
+  content: "analyzing your data...";
+  color: var(--LBGray);
+  font-family: DM Mono;
+  font-weight: 600;
   display: block;
   width: 30vmin;
-  height: 10vmin;
+  height: 20vmin;
   position: absolute;
   text-align: center;
 }
@@ -1395,16 +1339,8 @@ video {
   background-color: var(--LBGray);
 }
 
-.hover\:bg-LB-Orange:hover {
-  background-color: var(--LBOrange);
-}
-
 .hover\:p-1:hover {
   padding: 0.25rem;
-}
-
-.hover\:text-LB-Gray:hover {
-  color: var(--LBGray);
 }
 
 .hover\:text-white:hover {
@@ -1424,20 +1360,16 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:flex {
-    display: flex;
-  }
-
-  .sm\:hidden {
-    display: none;
-  }
-
   .sm\:flex-row {
     flex-direction: row;
   }
 
   .sm\:justify-between {
     justify-content: space-between;
+  }
+
+  .sm\:gap-28 {
+    gap: 7rem;
   }
 
   .sm\:text-3xl {
@@ -1457,24 +1389,13 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:flex {
-    display: flex;
+  .md\:w-16 {
+    width: 4rem;
   }
 
-  .md\:hidden {
-    display: none;
-  }
-
-  .md\:w-10 {
-    width: 2.5rem;
-  }
-
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
-  .md\:gap-6 {
-    gap: 1.5rem;
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .md\:text-lg {
@@ -1482,8 +1403,12 @@ video {
     line-height: 1.75rem;
   }
 
-  .md\:leading-5 {
-    line-height: 1.25rem;
+  .md\:leading-4 {
+    line-height: 1rem;
+  }
+
+  .md\:tracking-tighter {
+    letter-spacing: -0.05em;
   }
 }
 
@@ -1519,6 +1444,10 @@ video {
     width: 75%;
   }
 
+  .\32xl\:gap-52 {
+    gap: 13rem;
+  }
+
   .\32xl\:px-\[20\%\] {
     padding-left: 20%;
     padding-right: 20%;
@@ -1534,9 +1463,22 @@ video {
     line-height: 1;
   }
 
+  .\32xl\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
   .\32xl\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
+  }
+
+  .\32xl\:leading-5 {
+    line-height: 1.25rem;
+  }
+
+  .\32xl\:tracking-tighter {
+    letter-spacing: -0.05em;
   }
 }
 

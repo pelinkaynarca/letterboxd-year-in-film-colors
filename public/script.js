@@ -5,9 +5,13 @@ async function fetchColorPalette() {
   const yearInput = document.getElementById('year').value;
   const year = parseInt(yearInput, 10);
 
-  const containerHomepageContent = document.getElementById('containerHomepageContent');
+  const loaderWrapper = document.getElementById('loaderWrapper');
+  loaderWrapper.classList.remove('hidden');
+  loaderWrapper.classList.add('flex');
 
-  containerHomepageContent.style.display = "none";
+  const containerHomepageContent = document.getElementById('containerHomepageContent');
+  containerHomepageContent.classList.remove('flex');
+  containerHomepageContent.classList.add('hidden');
 
   // check if username or year is empty
   if (!username) {
@@ -37,8 +41,11 @@ async function fetchColorPalette() {
     const colorPaletteData = await response.json();
     console.log('Color Palette Data:', colorPaletteData);
     renderYearlyCalendar(colorPaletteData, year);
+
+    loaderWrapper.classList.add('hidden');
   } catch (error) {
     console.error('Error during fetch:', error.message);
+    loaderWrapper.classList.add('hidden');
   }
 }
 
@@ -201,6 +208,7 @@ function renderYearlyCalendar(colorPaletteData, year) {
     }
     table.appendChild(row);
   }
+
   /*
     // create and append the download button
     const downloadButton = document.createElement('button');

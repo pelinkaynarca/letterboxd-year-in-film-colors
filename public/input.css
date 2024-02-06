@@ -58,13 +58,13 @@
 }
 #loader:before {
 	/* Label properties */
-	content: "Analyzing your data...";
-	color: #fafad2;
-	text-shadow: 0.2vmin 0.2vmin 0 #000;
-	font-family: fantasy;
+	content: "analyzing your data...";
+	color: var(--LBGray);
+	font-family: DM Mono;
+	font-weight: 600;
 	display: block;
 	width: 30vmin;
-	height: 10vmin;
+	height: 20vmin;
 	position: absolute;
 	text-align: center;
 }
