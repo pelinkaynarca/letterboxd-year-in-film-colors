@@ -6,6 +6,19 @@ module.exports = {
       'title-font': 'Tourney',
       'default-font': 'DM Mono'
     },
+    linearGradientDirections: { // defaults to these values
+      't': 'to top',
+      'tr': 'to top right',
+      'r': 'to right',
+      'br': 'to bottom right',
+      'b': 'to bottom',
+      'bl': 'to bottom left',
+      'l': 'to left',
+      'tl': 'to top left',
+    },
+    linearGradientColors: { // defaults to {}
+      'lb-bg': ['var(--LBOrangeLight) 10%', 'var(--LBGreenLight) 50%', 'var(--LBBlueLight) 90%'],
+    },
       radialGradientShapes: { // defaults to this value
         'default': 'ellipse',
       },
@@ -24,17 +37,22 @@ module.exports = {
         'tl': 'top left',
       },
       radialGradientColors: {
-        'LB-Orange-LB-Green-LB-Blue': ['var(--LBOrange) 10%', 'var(--LBGreen) 50%', 'var(--LBBlue) 90%']
+        'LB-Orange-LB-Green-LB-Blue': ['var(--LBOrange) 10%', 'var(--LBGreen) 50%', 'var(--LBBlue) 90%'],
+        'orange-circle-bg': ['var(--LBOrange) 5%', 'var(--LBOrangeTransparent) 95%'],
+        'green-circle-bg': ['var(--LBGreen) 5%', 'var(--LBGreenTransparent) 95%'],
+        'blue-circle-bg': ['var(--LBBlue) 5%', 'var(--LBBlueTransparent) 95%']
       },
       extend: {
         colors: {
-          'light-gray': 'var(--LightGray)',
+          'LB-Light': 'var(--LBLight)',
           'LB-Gray': 'var(--LBGray)',
+          'LB-Dark': 'var(--LBDark)',
           'LB-Orange': 'var(--LBOrange)',
+          'LB-Orange-Transparent': 'var(--LBOrangeTransparent)',
           'LB-Green': 'var(--LBGreen)',
           'button-color': 'var(--buttonColor)',
           'LB-Blue': 'var(--LBBlue)',
-          'header-BG': 'var(--headerBG)',
+          'input-bg': 'var(--inputBG)',
           'headerBgLight': 'var(--headerBgLight)'
           },
   },

@@ -7,7 +7,7 @@ async function fetchColorPalette() {
 
   const loaderWrapper = document.getElementById('loaderWrapper');
   loaderWrapper.classList.remove('hidden');
-  loaderWrapper.classList.add('flex');
+  loaderWrapper.classList.add('block');
 
   const containerHomepageContent = document.getElementById('containerHomepageContent');
   containerHomepageContent.classList.remove('flex');
@@ -54,7 +54,7 @@ function getColor(date, colorPaletteData) {
   const formattedDate = ('0' + (date.getMonth() + 1)).slice(-2) + '/' + ('0' + date.getDate()).slice(-2);
   const items = colorPaletteData.filter(item => item.viewingDate === formattedDate);
   const colors = items.map(item => item.dominantColor);
-  return colors.length ? averageColor(colors) : 'rgba(0, 0, 0, 0.05)';
+  return colors.length ? averageColor(colors) : 'rgba(0, 0, 0, 0.15)';
 }
 
 function averageColor(colors) {

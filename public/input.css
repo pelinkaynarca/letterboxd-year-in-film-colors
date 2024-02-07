@@ -3,14 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --LightGray: rgba(44, 52, 63, 0.9);
+  --LBLight: rgba(109, 115, 121, 0.15);
   --LBGray: rgba(44, 52, 63, 1);
-  --LBOrange: rgba(255, 128, 0, 0.9);
-  --buttonColor: rgb(244, 154, 69);
-  --LBGreen: rgba(0, 224, 84, 0.9);
-  --LBBlue: rgba(64, 188, 244, 0.9);
-  --headerBG: rgba(255, 255, 255, 0.15);
-  --headerBgLight: rgba(255, 255, 255, 0.09);
+  --LBDark: rgba(20,24,28,1);
+  --LBOrange: rgba(255, 128, 0, 1);
+  --LBOrangeLight: rgba(255, 128, 0, 0.72);
+  --LBGreen: rgba(0, 224, 84, 1);
+  --LBGreenLight: rgba(0, 224, 84, 0.72);
+  --LBBlue: rgba(64, 188, 244, 1);
+  --LBBlueLight: rgba(64, 188, 244, 0.72);
+  --inputBG: rgba(255, 255, 255, 0.6);
+  --headerBgLight: rgba(255, 255, 255, 0.08);
 }
 
 #loader {
