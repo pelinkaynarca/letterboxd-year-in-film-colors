@@ -1,51 +1,91 @@
 let username;
+const container = document.getElementById('container');
 
 async function fetchColorPalette() {
+
+  clearErrorMessages();
+  
   username = document.getElementById('username').value;
   const yearInput = document.getElementById('year').value;
   const year = parseInt(yearInput, 10);
 
-  const loaderWrapper = document.getElementById('loaderWrapper');
-  loaderWrapper.classList.remove('hidden');
-  loaderWrapper.classList.add('block');
+  if (!username && !yearInput) {
+    document.getElementById('username').insertAdjacentHTML('afterend', '<p class="error text-sm text-red-600">please enter a username!</p>');
+    document.getElementById('year').insertAdjacentHTML('afterend', '<p class="error text-sm text-red-600">please enter a year!</p>');
+    return;
+  }
+
+  if (!username) {
+    document.getElementById('username').insertAdjacentHTML('afterend', '<p class="error text-sm text-red-600">please enter a username!</p>');
+    return;
+  }
+
+  if (!yearInput) {
+    document.getElementById('year').insertAdjacentHTML('afterend', '<p class="error text-sm text-red-600">please enter a year!</p>');
+    return;
+  }
+
+  if (isNaN(year) || year <= 0 || yearInput.length !== 4) {
+    document.getElementById('year').insertAdjacentHTML('afterend', '<p class="error text-sm text-red-600">please enter a valid year!</p>');
+    return;
+  }
 
   const containerHomepageContent = document.getElementById('containerHomepageContent');
   containerHomepageContent.classList.remove('flex');
   containerHomepageContent.classList.add('hidden');
 
-  // check if username or year is empty
-  if (!username) {
-    document.getElementById('username').insertAdjacentHTML('afterend', '<p class="error text-LB-Orange">Please enter a username.</p>');
-    return;
-  }
-
-  if (!yearInput) {
-    document.getElementById('year').insertAdjacentHTML('afterend', '<p class="error text-LB-Orange">Please enter a year.</p>');
-    return;
-  }
-
-  // check if year is a 4-digit number
-  if (isNaN(year) || year <= 0 || yearInput.length !== 4) {
-    document.getElementById('year').insertAdjacentHTML('afterend', '<p class="error text-LB-Orange">Please enter a valid year.</p>');
-    return;
-  }
+  const loaderWrapper = document.getElementById('loaderWrapper');
+  loaderWrapper.classList.remove('hidden');
+  loaderWrapper.classList.add('block');
 
   try {
     const response = await fetch(`http://localhost:3000/scrape?username=${username}&year=${year}`);
-
+  
     if (!response.ok) {
       console.error(`Failed to fetch. HTTP error! Status: ${response.status}`);
       return;
     }
-
+  
     const colorPaletteData = await response.json();
     console.log('Color Palette Data:', colorPaletteData);
+  
+    if (colorPaletteData.length === 0) {
+      loaderWrapper.classList.add('hidden');
+      const errorMessage = document.createElement('p');
+      errorMessage.className = 'text-xl font-medium text-center text-red-600 mb-7 error';
+      errorMessage.innerHTML = `no data found for <br> ${username} in ${year}!`;
+      container.appendChild(errorMessage);
+  
+      const tryAgainButton = document.createElement('button');
+      tryAgainButton.className = 'flex flex-row items-center justify-center w-36 p-2 text-xl font-medium text-LB-Gray rounded-[4px] h-12 bg-LB-Orange border-2 border-LB-Gray hover:scale-[103%] hover:shadow-md hover:shadow-LB-Gray';
+      tryAgainButton.textContent = 'TRY AGAIN';
+      tryAgainButton.onclick = redirectToHomepage;
+      container.appendChild(tryAgainButton);
+  
+      function redirectToHomepage() {
+        location.href = "./index.html";
+      }
+      return;
+    }
+    
     renderYearlyCalendar(colorPaletteData, year);
-
+  
     loaderWrapper.classList.add('hidden');
   } catch (error) {
     console.error('Error during fetch:', error.message);
-    loaderWrapper.classList.add('hidden');
+  }
+}
+
+function clearErrorMessages() {
+  const usernameError = document.querySelector('#username + .error');
+  const yearError = document.querySelector('#year + .error');
+
+  if (usernameError) {
+    usernameError.remove();
+  }
+
+  if (yearError) {
+    yearError.remove();
   }
 }
 
@@ -73,92 +113,8 @@ function averageColor(colors) {
   return '#' + r.toString(16).padStart(2, '0') + g.toString(16).padStart(2, '0') + b.toString(16).padStart(2, '0');
 }
 
-/*
-
 function renderYearlyCalendar(colorPaletteData, year) {
-  const container = document.getElementById('container');
   
-  // create and append the title
-  const tableTitle = document.createElement('h2');
-  tableTitle.textContent = `${username}'s ${year} in Film Colors`;
-  tableTitle.className = "mb-8 text-2xl font-semibold 2xl:mb-12 xl:text-3xl 2xl:text-4xl font-title-font text-LB-Gray";
-
-  // create table
-  const table = document.createElement('table');
-  table.id = "table";
-  table.className = "border-separate";
-  const startDate = new Date(year, 0, 1); // the start date of the calendar
-  const startDay = startDate.getDay(); // the day of the week of the start date
-
-  // append the title and the table to the container
-  container.appendChild(tableTitle);
-  container.appendChild(table);
-
-  // create an array of month names
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-  // create an array of colspan for each month
-  const colSpanForMonth = [4, 4, 4, 5, 4, 4, 5, 4, 4, 5, 4, 5];
-
-  // Check if the viewport is 600px or less
-  if (window.innerWidth <= 500) {
-    // create a column for each month
-    for (let i = 0; i < 12; i++) {
-      const column = document.createElement('col');
-      table.appendChild(column);
-  
-      const monthCell = document.createElement('th');
-      monthCell.textContent = months[i];
-      column.appendChild(monthCell);
-  
-      const row = document.createElement('tr'); // create a row
-      column.appendChild(row); // append the row to the column
-  
-      for (let j = 0; j < (isLeapYear(year) ? 53 : 52); j++) { // adjust weeks for leap year
-        const cell = document.createElement('td');
-        const date = new Date(startDate.getTime() + (((j * 7 + i) - startDay) * 24 * 60 * 60 * 1000));
-        cell.style.backgroundColor = getColor(date, colorPaletteData); // pass the date object directly
-        cell.className = "w-2 h-2";
-        cell.title = date.toDateString();
-        row.appendChild(cell); // append the cell to the row
-      }
-    }
-  }
-   else {
-    // create a row for month headings 
-    const monthRow = document.createElement('tr');
-    for (let i = 0; i < 12; i++) {
-      const monthCell = document.createElement('th');
-      monthCell.textContent = months[i];
-      monthCell.colSpan = colSpanForMonth[i]; // set colspan according to the array
-      monthRow.appendChild(monthCell);
-    }
-    table.appendChild(monthRow);
-
-    for (let i = 0; i < 7; i++) { // for each day of the week
-      const row = document.createElement('tr');
-      for (let j = 0; j < (isLeapYear(year) ? 53 : 52); j++) { // adjust weeks for leap year
-        const cell = document.createElement('td');
-        const date = new Date(startDate.getTime() + (((j * 7 + i) - startDay) * 24 * 60 * 60 * 1000));
-        cell.style.backgroundColor = getColor(date, colorPaletteData); // pass the date object directly
-        cell.className = "w-2 h-2";
-        cell.title = date.toDateString();
-        row.appendChild(cell);
-      }
-      table.appendChild(row);
-    }
-  }
-}
-
-*/
-
-function renderYearlyCalendar(colorPaletteData, year) {
-
-  const container = document.getElementById('container');
-
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
-  }
   // create and append the title
   const tableTitle = document.createElement('h2');
   tableTitle.innerHTML = `${username}'s ${year}<br> in Film Colors`;

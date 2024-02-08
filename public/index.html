@@ -12,29 +12,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
+
 <body
-  class="flex flex-col items-center justify-center h-screen p-0 bg-cover bg-gradient-br-lb-bg backdrop-blur-3xl font-default-font">
+  class="flex flex-col items-center justify-center p-0 bg-cover h-dvh bg-gradient-br-lb-bg backdrop-blur-3xl font-default-font">
   <noscript>Your browser does not support JavaScript!</noscript>
-  <nav class="fixed top-0 flex flex-row items-center justify-center w-screen py-5 h-1/6 text-LB-Gray">
-    <div class="flex flex-row items-center justify-center w-11/12 h-full px-10 text-lg lg:w-4/5 2xl:w-3/4">
-      <div class="flex flex-col items-center gap-1 min-w-max"><img src="images/logo2.png" alt="logo" class="w-14 md:w-16">
+  <nav class="fixed top-0 flex items-center justify-center w-screen h-1/6 text-LB-Gray">
+    <div class="flex flex-row items-center justify-center w-11/12 h-full px-5 text-lg sm:px-10 lg:w-4/5 2xl:w-3/4">
+      <div class="flex flex-col items-center justify-center gap-1 min-w-max"><img src="images/logo2.png" alt="logo"
+          class="w-10 md:w-16">
         <a href="./index.html"
-          class="text-sm font-extrabold leading-4 tracking-tighter text-center no-underline md:text-base 2xl:text-lg md:leading-4 md:tracking-tighter 2xl:leading-5 2xl:tracking-tighter text-LB-Gray">YEAR IN <br>FILM COLORS</a>
-        </div>
-      <ul class="flex flex-row items-center justify-end w-full h-full gap-14 sm:gap-12 2xl:gap-12">
-        <li><a href="./about.html"
-            class="p-1 text-sm md:text-lg rounded-[4px] tracking-tighter hover:bg-LB-Gray hover:text-white">about</a>
+          class="text-xs font-extrabold leading-4 tracking-tighter text-center no-underline md:text-base 2xl:text-lg md:leading-4 md:tracking-tighter 2xl:leading-5 2xl:tracking-tighter text-LB-Gray">YEAR
+          IN <br>FILM COLORS</a>
+      </div>
+      <ul class="flex flex-col flex-wrap items-center content-end justify-center w-full h-full sm:justify-end sm:content-normal sm:flex-row sm:gap-5">
+        <li class="underline"><a href="./index.html"
+          class="text-sm md:text-lg rounded-[4px] p-2 tracking-tighter hover:bg-LB-Gray hover:text-white">home</a>
+        <li class="underline"><a href="./about.html"
+            class="text-sm md:text-lg rounded-[4px] p-2 tracking-tighter hover:bg-LB-Gray hover:text-white">about</a>
         </li>
-        <li><a href="./contact"
-            class="p-1 text-sm md:text-lg tracking-tighter rounded-[4px] hover:bg-LB-Gray hover:text-white">contact</a></li>
+        <li class="underline"><a href="./contact.html"
+            class="text-sm md:text-lg tracking-tighter p-2 rounded-[4px] hover:bg-LB-Gray hover:text-white">contact</a>
+        </li>
       </ul>
     </div>
   </nav>
   <div id="container"
-    class="flex z-10 flex-col items-center justify-center w-11/12 py-8 rounded-3xl px-10 lg:px-48 mt-14 bg-LB-Light h-3/4 lg:w-4/5 2xl:w-3/4 2xl:px-[20%] overflow-hidden">
+    class="flex flex-col items-center justify-center w-11/12 py-8 rounded-3xl px-10 lg:px-48 mt-14 bg-LB-Light h-3/4 lg:w-4/5 2xl:w-3/4 2xl:px-[20%] overflow-hidden">
     <div class="flex flex-col items-center justify-center" id="containerHomepageContent">
       <div id="homepageTextWrapper" class="flex flex-col text-center z-1 pb-9">
-        <h1 class="mb-8 text-2xl font-semibold sm:text-3xl 2xl:mb-12 xl:text-4xl 2xl:text-5xl font-title-font text-LB-Gray">
+        <h1
+          class="mb-5 text-2xl font-semibold sm:text-3xl 2xl:mb-12 xl:text-4xl 2xl:text-5xl font-title-font text-LB-Gray">
           EXPLORE YOUR
           <br class="">
           YEAR IN FILM COLORS
@@ -47,12 +54,12 @@
         <div class="flex flex-col gap-4 mb-6">
           <div class="flex flex-col gap-1">
             <label for="username" id="usernameLabel" class="text-xs sm:text-sm text-LB-Gray">username</label>
-            <input type="text" id="username"
+            <input autocomplete="off" type="text" id="username"
               class="w-60 px-2 text-sm font-light rounded-[4px] h-9 bg-LB-Gray focus:bg-input-bg text-white focus:text-LB-Gray">
           </div>
           <div class="flex flex-col gap-1">
             <label for="year" id="yearLabel" class="text-xs sm:text-sm text-LB-Gray">year</label>
-            <input type="text" id="year"
+            <input autocomplete="off" type="text" id="year"
               class="w-60 px-2 text-sm font-light rounded-[4px] h-9 bg-LB-Gray focus:bg-input-bg text-white focus:text-LB-Gray">
           </div>
         </div>
@@ -72,7 +79,8 @@
   </div>
   <footer
     class="fixed bottom-0 left-0 py-2 px-5 text-[10px] 2xl:text-xs tracking-tighter text-LB-Gray w-screen flex justify-center">
-    <div id="footerWrapper" class="flex flex-col items-center justify-center w-11/12 sm:justify-between sm:flex-row lg:w-4/5 2xl:w-3/4">
+    <div id="footerWrapper"
+      class="flex flex-col items-center justify-center w-11/12 sm:justify-between sm:flex-row lg:w-4/5 2xl:w-3/4">
       <span>Created by <a href="https://github.com/pelinkaynarca"
           class="border-b-[1px] border-LB-Gray hover:rounded-md cursor-pointer hover:bg-LB-Gray hover:p-1 hover:text-white">Pelin
           K.</a></span>
