@@ -1,5 +1,33 @@
-let username;
 const container = document.getElementById('container');
+
+function hamburgerMenuToggle() {
+  const hamburgerMenuButton = document.getElementById("hamburgerMenuButton");
+  const hamburgerStripes = document.getElementById("hamburgerStripes");
+  const firstStripe = hamburgerStripes.children[0];
+  const secondStripe = hamburgerStripes.children[1];
+  const thirdStripe = hamburgerStripes.children[2];
+  const hamburgerMenuWrapper = document.getElementById("hamburgerMenuWrapper");
+
+  container.classList.toggle("opacity-100");
+  container.classList.toggle("opacity-35");
+
+  hamburgerMenuWrapper.classList.toggle("opacity-0");
+  hamburgerMenuWrapper.classList.toggle("opacity-100");
+  
+  hamburgerMenuButton.classList.toggle("bg-LB-Light");
+  hamburgerMenuButton.classList.toggle("bg-LB-Gray");
+
+  firstStripe.classList.toggle("hamburger-stripes-default");
+  firstStripe.classList.toggle("hamburger-first-stripe-transform"); 
+
+  secondStripe.classList.toggle("opacity-100");
+  secondStripe.classList.toggle("opacity-0");
+
+  thirdStripe.classList.toggle("hamburger-stripes-default");
+  thirdStripe.classList.toggle("hamburger-third-stripe-transform"); 
+}
+
+let username;
 
 async function fetchColorPalette() {
 
@@ -39,7 +67,7 @@ async function fetchColorPalette() {
   loaderWrapper.classList.add('block');
 
   try {
-    const response = await fetch(`http://localhost:3000/scrape?username=${username}&year=${year}`);
+    const response = await fetch(`https://yearinfilmcolors.onrender.com/scrape?username=${username}&year=${year}`);
   
     if (!response.ok) {
       console.error(`Failed to fetch. HTTP error! Status: ${response.status}`);

@@ -14,19 +14,29 @@
 </head>
 
 <body
-  class="flex flex-col items-center justify-center p-0 bg-cover h-dvh bg-gradient-br-lb-bg backdrop-blur-3xl font-default-font">
+  class="flex flex-col items-center justify-center p-0 bg-cover h-dvh bg-gradient-br-lb-bg backdrop-blur-3xl font-default-font animate-fadeInAnimation">
   <noscript>Your browser does not support JavaScript!</noscript>
   <nav class="fixed top-0 flex items-center justify-center w-screen h-1/6 text-LB-Gray">
-    <div class="flex flex-row items-center justify-center w-11/12 h-full px-5 text-lg sm:px-10 lg:w-4/5 2xl:w-3/4">
+    <div class="flex flex-row items-center justify-between w-11/12 h-full px-4 text-lg sm:px-10 lg:w-4/5 2xl:w-3/4">
       <div class="flex flex-col items-center justify-center gap-1 min-w-max"><img src="images/logo2.png" alt="logo"
           class="w-10 md:w-16">
         <a href="./index.html"
           class="text-xs font-extrabold leading-4 tracking-tighter text-center no-underline md:text-base 2xl:text-lg md:leading-4 md:tracking-tighter 2xl:leading-5 2xl:tracking-tighter text-LB-Gray">YEAR
           IN <br>FILM COLORS</a>
       </div>
-      <ul class="flex flex-col flex-wrap items-center content-end justify-center w-full h-full sm:justify-end sm:content-normal sm:flex-row sm:gap-5">
+      <!-- mobile hamburger menu -->
+      <div id="hamburgerMenuButton" onclick="hamburgerMenuToggle()" class="flex items-center justify-center transition-all duration-500 ease-in-out rounded-lg shadow-md cursor-pointer sm:hidden w-11 h-11 bg-LB-Light group">
+        <div id="hamburgerStripes" class="transition-all duration-500 ease-in-out transform">
+            <div class="h-[1px] rounded-2 m-2 hamburger-stripes-default w-6 transform transition-all duration-550 cubic-bezier(0.075, 0.82, 0.165, 1)"></div>
+            <div class="h-[1px] rounded-2 m-2 w-6 bg-LB-Gray transform duration-550 cubic-bezier(0.075, 0.82, 0.165, 1) opacity-100"></div>
+            <div class="h-[1px] rounded-2  m-2 w-6 hamburger-stripes-default transform transition-all duration-550 cubic-bezier(0.075, 0.82, 0.165, 1)"></div>
+        </div>
+    </div>
+    <!-- mobile hamburger menu -->
+      <ul class="flex-col flex-wrap items-center content-end justify-center hidden w-full h-full sm:flex sm:justify-end sm:content-normal sm:flex-row sm:gap-5">
         <li class="underline"><a href="./index.html"
           class="text-sm md:text-lg rounded-[4px] p-2 tracking-tighter hover:bg-LB-Gray hover:text-white">home</a>
+        </li>
         <li class="underline"><a href="./about.html"
             class="text-sm md:text-lg rounded-[4px] p-2 tracking-tighter hover:bg-LB-Gray hover:text-white">about</a>
         </li>
@@ -34,10 +44,21 @@
             class="text-sm md:text-lg tracking-tighter p-2 rounded-[4px] hover:bg-LB-Gray hover:text-white">contact</a>
         </li>
       </ul>
-    </div>
   </nav>
+  <div id="hamburgerMenuWrapper" class="flex opacity-0 z-10 transition-opacity duration-400 ease-in-out absolute left-0 right-0 flex-col items-center justify-center w-11/12 p-2 mx-auto top-[14%] h-48 rounded-3xl sm:hidden bg-LB-Gray">
+    <ul class="flex flex-col items-center justify-center w-full gap-3">
+      <li class="w-5/6 p-2 text-sm tracking-tighter text-center text-white rounded-md hover:bg-LB-Light"><a href="./index.html"
+        class="">home</a>
+      <li class="w-5/6 p-2 text-sm tracking-tighter text-center text-white rounded-md hover:bg-LB-Light"><a href="./about.html"
+          class="">about</a>
+      </li>
+      <li class="w-5/6 p-2 text-sm tracking-tighter text-center text-white rounded-md hover:bg-LB-Light"><a href="./contact.html"
+          class="">contact</a>
+      </li>
+    </ul>
+  </div>
   <div id="container"
-    class="flex flex-col items-center justify-center w-11/12 py-8 rounded-3xl px-10 lg:px-48 mt-14 bg-LB-Light h-3/4 lg:w-4/5 2xl:w-3/4 2xl:px-[20%] overflow-hidden">
+    class="z-0 transition-opacity duration-400 ease-in flex items-center justify-center w-11/12 py-8 rounded-3xl px-10 lg:px-48 mt-14 bg-LB-Light h-3/4 lg:w-4/5 2xl:w-3/4 2xl:px-[20%] overflow-hidden">
     <div class="flex flex-col items-center justify-center" id="containerHomepageContent">
       <div id="homepageTextWrapper" class="flex flex-col text-center z-1 pb-9">
         <h1
@@ -55,12 +76,12 @@
           <div class="flex flex-col gap-1">
             <label for="username" id="usernameLabel" class="text-xs sm:text-sm text-LB-Gray">username</label>
             <input autocomplete="off" type="text" id="username"
-              class="w-60 px-2 text-sm font-light rounded-[4px] h-9 bg-LB-Gray focus:bg-input-bg text-white focus:text-LB-Gray">
+              class="w-60 px-2 text-sm font-light rounded-[4px] h-9 bg-LB-Gray focus:bg-input-bg text-white focus:outline-LB-Gray focus:text-LB-Gray">
           </div>
           <div class="flex flex-col gap-1">
             <label for="year" id="yearLabel" class="text-xs sm:text-sm text-LB-Gray">year</label>
             <input autocomplete="off" type="text" id="year"
-              class="w-60 px-2 text-sm font-light rounded-[4px] h-9 bg-LB-Gray focus:bg-input-bg text-white focus:text-LB-Gray">
+              class="w-60 px-2 text-sm font-light rounded-[4px] focus:outline-LB-Gray h-9 bg-LB-Gray focus:bg-input-bg text-white focus:text-LB-Gray">
           </div>
         </div>
         <div class="self-end">

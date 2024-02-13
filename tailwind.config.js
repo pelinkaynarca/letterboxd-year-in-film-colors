@@ -42,6 +42,15 @@ module.exports = {
         'green-circle-bg': ['var(--LBGreen) 5%', 'var(--LBGreenTransparent) 95%'],
         'blue-circle-bg': ['var(--LBBlue) 5%', 'var(--LBBlueTransparent) 95%']
       },
+      keyframes: {
+        fadeInAnimation: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1'},
+        }
+      },
+      animation: {
+        'fadeInAnimation': 'fadeInAnimation ease 2s'
+      },
       extend: {
         colors: {
           'LB-Light': 'var(--LBLight)',
