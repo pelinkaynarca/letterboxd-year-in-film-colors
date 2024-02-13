@@ -38,7 +38,7 @@
           class="text-sm md:text-lg rounded-[4px] p-2 tracking-tighter hover:bg-LB-Gray hover:text-white">home</a>
         </li>
         <li class="underline"><a href="./about.html"
-            class="text-sm md:text-lg rounded-[4px] p-2 tracking-tighter hover:bg-LB-Gray hover:text-white">about</a>
+            class="text-sm md:text-lg rounded-[4px] p-2 tracking-tighter hover:bg-LB-Gray hover:text-white">how does it work?</a>
         </li>
         <li class="underline"><a href="./contact.html"
             class="text-sm md:text-lg tracking-tighter p-2 rounded-[4px] hover:bg-LB-Gray hover:text-white">contact</a>
@@ -60,19 +60,18 @@
   <div id="container"
     class="z-0 transition-opacity duration-400 ease-in flex flex-col items-center justify-center w-11/12 py-8 rounded-3xl px-10 lg:px-48 mt-14 bg-LB-Light h-3/4 lg:w-4/5 2xl:w-3/4 2xl:px-[20%] overflow-hidden">
     <div class="flex flex-col items-center justify-center" id="containerHomepageContent">
-      <div id="homepageTextWrapper" class="flex flex-col text-center z-1 pb-9">
+      <div id="homepageTextWrapper" class="flex flex-col pb-6 text-center">
         <h1
-          class="mb-5 text-2xl font-semibold sm:text-3xl 2xl:mb-12 xl:text-4xl 2xl:text-5xl font-title-font text-LB-Gray">
+          class="mb-4 text-2xl font-semibold sm:text-3xl 2xl:mb-12 xl:text-4xl 2xl:text-5xl font-title-font text-LB-Gray">
           EXPLORE YOUR
           <br class="">
           YEAR IN FILM COLORS
         </h1>
         <p id="homepageDescription" class="text-sm font-normal leading-5 sm:text-base text-LB-Gray">simply enter your letterboxd
-          username and the year, and let year in film colors craft a personalized calendar for you, with each day
-          colored with the extracted hues from the posters of the films you watched throughout the year!</p>
+          username and the year, and let your film choices throughout the year transform into a vibrant personalized calendar!</p>
       </div>
       <div id="homepageFormContainer" class="flex flex-col items-center">
-        <div class="flex flex-col gap-4 mb-6">
+        <div class="flex flex-col gap-4 mb-5">
           <div class="flex flex-col gap-1">
             <label for="username" id="usernameLabel" class="text-xs sm:text-sm text-LB-Gray">username</label>
             <input autocomplete="off" type="text" id="username"
@@ -87,7 +86,7 @@
         <div class="self-end">
           <button onclick="fetchColorPalette()"
             class="flex flex-row items-center justify-center w-24 gap-2 text-LB-Gray rounded-[4px] h-10 bg-LB-Orange border-2 border-LB-Gray hover:scale-[103%] hover:shadow-md hover:shadow-LB-Gray">
-            <span id="buttonText" class="text-xl font-medium">GO!</span>
+            <span id="buttonText" class="text-lg font-medium sm:text-xl">GO!</span>
             <!-- <img src="./images/buttonIcon.png" alt="icon" id="buttonIcon" class="w-4 text-LB-Gray"> -->
           </button>
         </div>
@@ -101,7 +100,7 @@
   <footer
     class="fixed bottom-0 left-0 py-2 px-5 text-[10px] 2xl:text-xs tracking-tighter text-LB-Gray w-screen flex justify-center">
     <div id="footerWrapper"
-      class="flex flex-col items-center justify-center w-11/12 sm:justify-between sm:flex-row lg:w-4/5 2xl:w-3/4">
+      class="flex flex-col items-center justify-center w-11/12 gap-0.5 sm:justify-between sm:flex-row lg:w-4/5 2xl:w-3/4">
       <span>Created by <a href="https://github.com/pelinkaynarca"
           class="border-b-[1px] border-LB-Gray hover:rounded-md cursor-pointer hover:bg-LB-Gray hover:p-1 hover:text-white">Pelin
           K.</a></span>
