@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>year in film colors</title>
+  <title>year in film colors | about</title>
   <link href="./output.css" rel="stylesheet">
   <script src="./script.js" type="text/javascript" defer></script>
   <link rel="icon" type="image/x-icon" href="./images/logo.png">
@@ -59,43 +59,12 @@
     </ul>
   </div>
   <div id="container"
-    class="z-0 transition-opacity duration-400 ease-in flex flex-col items-center justify-center w-11/12 py-8 rounded-3xl px-10 lg:px-48 mt-14 bg-LB-Light h-3/4 lg:w-4/5 2xl:w-3/4 2xl:px-[20%] overflow-hidden">
-    <div class="flex flex-col items-center justify-center" id="containerHomepageContent">
-      <div id="homepageTextWrapper" class="flex flex-col pb-6 text-center">
-        <h1
-          class="mb-4 text-xl font-semibold sm:text-3xl 2xl:mb-12 xl:text-4xl 2xl:text-5xl font-title-font text-LB-Gray">
-          EXPLORE YOUR
-          <br class="">
-          YEAR IN FILM COLORS
-        </h1>
-        <p id="homepageDescription" class="text-sm font-normal leading-5 sm:text-base text-LB-Gray">simply enter your letterboxd
-          username and the year, and let your film choices throughout the year transform into a vibrant personalized calendar!</p>
-      </div>
-      <div id="homepageFormContainer" class="flex flex-col items-center">
-        <div class="flex flex-col gap-4 mb-5">
-          <div class="flex flex-col gap-1">
-            <label for="username" id="usernameLabel" class="text-xs sm:text-sm text-LB-Gray">username</label>
-            <input autocomplete="off" type="text" id="username"
-              class="w-60 px-2 text-sm font-light rounded-[4px] h-9 bg-LB-Gray focus:bg-input-bg text-white focus:outline-LB-Gray focus:text-LB-Gray">
-          </div>
-          <div class="flex flex-col gap-1">
-            <label for="year" id="yearLabel" class="text-xs sm:text-sm text-LB-Gray">year</label>
-            <input autocomplete="off" type="text" id="year"
-              class="w-60 px-2 text-sm font-light rounded-[4px] focus:outline-LB-Gray h-9 bg-LB-Gray focus:bg-input-bg text-white focus:text-LB-Gray">
-          </div>
-        </div>
-        <div class="self-end">
-          <button onclick="fetchColorPalette()"
-            class="flex flex-row items-center justify-center w-24 gap-2 text-LB-Gray rounded-[4px] h-10 bg-LB-Orange border-2 border-LB-Gray hover:scale-[103%] hover:shadow-md hover:shadow-LB-Gray">
-            <span id="buttonText" class="text-lg font-medium sm:text-xl">GO!</span>
-            <!-- <img src="./images/buttonIcon.png" alt="icon" id="buttonIcon" class="w-4 text-LB-Gray"> -->
-          </button>
-        </div>
-      </div>
-    </div>
-    <div id="loaderWrapper" class="hidden">
-      <div id="loader" class="sm:loader before:text-2xl xl:before:text-4xl">
-      </div>
+    class="z-0 transition-opacity duration-400 ease-in flex flex-col w-11/12 py-8 rounded-3xl px-3 lg:px-48 mt-14 bg-LB-Light h-3/4 lg:w-4/5 2xl:w-3/4 2xl:px-[20%] justify-center">
+    <div id="aboutTextContainer" class="relative flex flex-col items-center px-4 overflow-x-auto sm:justify-center scrollbar-thin scrollbar-thumb-LB-Gray scrollbar-track-headerBgLight">
+        <h1 class="mb-4 text-2xl font-semibold sm:text-3xl 2xl:mb-12 xl:text-4xl 2xl:text-5xl font-title-font text-LB-Gray">how does it work?</h1>
+        <p class="text-xs font-normal leading-5 sm:text-base text-LB-Gray"><strong>year in film colors</strong> transforms your film preferences throughout the year into a dynamic visual representation tailored just for you. but how does it work exactly? <br>
+         the process begins with a dive into your letterboxd diary based on the username and year you initially provide. each page of your diary is meticulously examined to gather the details of the films you've watched over the year. a key part of this involves identifying the dominant color of each film's poster. these dominant colors are crucial for coloring the corresponding day on your personalized calendar. each calendar cell can be hovered over to reveal the related film names and viewing dates. if you've watched more than one film in a day, the dominant colors from each poster are blended to create a unique color for that day. the end result? a one-of-a-kind colorful calendar that represents your annual film journey.
+        </p>
     </div>
   </div>
   <footer

@@ -2,7 +2,6 @@ const express = require("express");
 const puppeteer = require("puppeteer");
 const cors = require("cors");
 const Vibrant = require("node-vibrant");
-require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 3000;

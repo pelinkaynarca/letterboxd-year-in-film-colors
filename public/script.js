@@ -1,4 +1,5 @@
 const container = document.getElementById('container');
+let username;
 
 function hamburgerMenuToggle() {
   const hamburgerMenuButton = document.getElementById("hamburgerMenuButton");
@@ -27,8 +28,6 @@ function hamburgerMenuToggle() {
   thirdStripe.classList.toggle("hamburger-third-stripe-transform"); 
 }
 
-let username;
-
 async function fetchColorPalette() {
 
   clearErrorMessages();
@@ -53,7 +52,9 @@ async function fetchColorPalette() {
     return;
   }
 
-  if (isNaN(year) || year <= 0 || yearInput.length !== 4) {
+  const currentYear = new Date().getFullYear();
+
+  if (isNaN(year) || yearInput.length !== 4 || year > currentYear) {
     document.getElementById('year').insertAdjacentHTML('afterend', '<p class="error text-sm text-red-600">please enter a valid year!</p>');
     return;
   }
@@ -80,12 +81,12 @@ async function fetchColorPalette() {
     if (colorPaletteData.length === 0) {
       loaderWrapper.classList.add('hidden');
       const errorMessage = document.createElement('p');
-      errorMessage.className = 'text-xl font-medium text-center text-red-600 mb-7 error';
+      errorMessage.className = 'text-base font-bold text-center text-red-600 font-title-font sm:text-3xl mb-7 error';
       errorMessage.innerHTML = `no data found for <br> ${username} in ${year}!`;
       container.appendChild(errorMessage);
   
       const tryAgainButton = document.createElement('button');
-      tryAgainButton.className = 'flex flex-row items-center justify-center w-36 p-2 text-xl font-medium text-LB-Gray rounded-[4px] h-12 bg-LB-Orange border-2 border-LB-Gray hover:scale-[103%] hover:shadow-md hover:shadow-LB-Gray';
+      tryAgainButton.className = 'flex flex-row items-center justify-center w-28 sm:w-36 p-2 sm:text-xl text-base font-medium text-LB-Gray rounded-[4px] h-11 bg-LB-Orange border-2 border-LB-Gray hover:scale-[103%] hover:shadow-md hover:shadow-LB-Gray';
       tryAgainButton.textContent = 'TRY AGAIN';
       tryAgainButton.onclick = redirectToHomepage;
       container.appendChild(tryAgainButton);

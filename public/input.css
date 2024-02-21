@@ -10,7 +10,9 @@
 	.hamburger-third-stripe-transform {
 		@apply -translate-y-[9.1px] -rotate-45 bg-white;
 	}
+}
 
+@layer utilities {
 	.hamburger-stripes-default {
 		@apply bg-LB-Gray;
 	}
@@ -21,13 +23,6 @@
 
 	.hamburger-menu-wrapper-transition {
 		@apply flex opacity-100;
-	}
-
-	.hamburger-menu-container-default {
-
-	}
-	.hamburger-menu-container-transition {
-
 	}
 }
 
@@ -46,13 +41,18 @@
 }
 
 #loader {
-	width: 10vw;
-	height: 10vh;
+	width: 25%;
+	height: 25%;
 	display: grid;
 	place-items: center;
 	/* Overall size of all boxes */
-	--f-w: 2vmin;
-	--f-g: 0.1vmin;
+	--f-w: 1rem;
+	--f-g: 0.2rem;
+
+	@screen sm {
+		--f-w: 1.4rem;
+	  }
+	
 	/* Columns offsets: --x-$col */
 	--x-1: calc(-2.5 * (var(--f-w) + var(--f-g)));
 	--x-2: calc(-1.5 * (var(--f-w) + var(--f-g)));
@@ -86,18 +86,17 @@
 	--c-6-3: #ff8a65;
 	box-sizing: border-box;
 	/* Box size */
-	font-size: 3vmin;
 }
 
 #loader:before {
 	/* Label properties */
 	content: "analyzing your data...";
 	color: var(--LBGray);
-	font-family: DM Mono;
+	font-family: Tourney;
 	font-weight: 600;
 	display: block;
-	width: 30vmin;
-	height: 20vmin;
+	width: 55%;
+	height: 18%;
 	position: absolute;
 	text-align: center;
 }
